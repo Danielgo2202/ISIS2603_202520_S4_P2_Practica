@@ -1,17 +1,25 @@
-<div *ngIf="emprendedorDetail" style="margin-bottom: 2rem;">
-    <h3>{{emprendedorDetail.nombre}}</h3>
+<div *ngIf="emprendedor" style="margin-bottom: 2rem;">
+
+    <div style="background-color: green;color: white;text-align: center;">
+    {{ emprendedor?.nombre }}
+    </div>
+
     <div>
         <div style="height: 300px; display: inline-block;">
-            <img [src]="emprendedorDetail.foto_url" alt="{{ emprendedorDetail.nombre }}" style="width: 80%; ">
+            <img [src]="emprendedor.foto_url" alt="{{ emprendedor.nombre }}" style="width: 80%; ">
         </div>
         
         <div style="width: 50%; display: inline-block;">
-            <p><strong>Pregrado: </strong> {{emprendedorDetail.pregrado}} </p>
-            <p><strong>Genero: </strong> {{emprendedorDetail.genero}} </p>
-            <p><strong>Emprendimientos: </strong></p>
+            <p><strong class="text-success">Pregrado: </strong> {{emprendedor.pregrado}} </p>
+            <p><strong class="text-success">Genero: </strong> {{emprendedor.genero}} </p>
+            <p><strong class="text-success">Emprendimientos: </strong></p>
             <ul>
-                <li *ngFor="let emprendimiento of emprendedorDetail.emprendimientos">{{ emprendimiento }}</li>
+                <li *ngFor="let emprendimiento of emprendedor.emprendimientos">{{ emprendimiento }}</li>
             </ul>
+
+            <button [routerLink]="['/emprendedores']"style="background-color: green;color: white;cursor: pointer;">
+            Volver al listado
+            </button>
         </div>
     </div>
 </div>

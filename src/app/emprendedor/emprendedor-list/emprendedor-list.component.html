@@ -1,24 +1,23 @@
-<div class="container">
-    <h1 class="mt-4">Jovenes Emprendedores Colombianos</h1>
+<div style="background-color: green; color: white; padding: 10px; text-align: center">
+  <h1>Jóvenes Emprendedores Colombianos</h1>
+</div>
 
-    <table class="table table-bordered mt-4">
-        <thead>
-            <tr style="--bs-table-bg: #0ae98a; --bs-table-color: white;">
-                <th scope="col">Nombre</th>
-                <th scope="col">Foto</th>
-                <th scope="col">Genero</th>
-                <th scope="col">Pregrado</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr *ngFor="let emprendedor of emprendedores" (click)="seleccionarEmprendedor(emprendedor)">
-                <td>{{ emprendedor.nombre }}</td>
-                <td><img [src]="emprendedor.foto_url" alt="{{ emprendedor.nombre }}" style="width: 50px; height: auto;"></td>
-                <td>{{ emprendedor.genero }}</td>
-                <td>{{ emprendedor.pregrado }}</td>
-            </tr>
-        </tbody>
-    </table>
+<div class="container">
+
+    <div style="display: flex; gap: 15px; overflow-x: auto; margin-top: 15px; padding-bottom: 10px;">
     
-    <app-emprendedor-detail *ngIf="emprendedorSeleccionado" [emprendedor]="emprendedorSeleccionado"></app-emprendedor-detail>
+    <div *ngFor="let emprendedor of emprendedores"[routerLink]="['/emprendedores', emprendedor.id]"style="cursor: pointer; text-align: center;">
+      <img [src]="emprendedor.foto_url" alt="{{ emprendedor.nombre }}" style="width: 120px; height: auto; border-radius: 6px;">
+
+      <h3 style="color: green; font-weight: bold; margin-top: 10px;">{{ emprendedor.nombre }}</h3>
+
+        <p><strong>Género:</strong> {{ emprendedor.genero }}</p>
+        <p><strong>Pregrado:</strong> {{ emprendedor.pregrado }}</p>
+        </div>
+
+    </div>
+
+    <button style="background-color: green;color: white;">
+            Total Emprendedores: {{ emprendedores.length }}
+    </button>
 </div>

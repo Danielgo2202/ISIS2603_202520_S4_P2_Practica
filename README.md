@@ -1,3 +1,6 @@
+Nombre: Daniel Andres Gomez Avila
+Codigo: 202413493
+
 # ParcialPractico2202520Dsw
 
 This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.2.5.
