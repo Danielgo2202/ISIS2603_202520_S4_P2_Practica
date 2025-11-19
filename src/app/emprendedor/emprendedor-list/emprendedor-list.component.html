@@ -9,7 +9,7 @@
     <div *ngFor="let emprendedor of emprendedores"[routerLink]="['/emprendedores', emprendedor.id]"style="cursor: pointer; text-align: center;">
       <img [src]="emprendedor.foto_url" alt="{{ emprendedor.nombre }}" style="width: 120px; height: auto;">
 
-      <h3 style="color: green; font-weight: bold;">{{ emprendedor.nombre }}</h3>
+      <h3 style="font-weight: bold;">{{ emprendedor.nombre }}</h3>
 
         <p><strong>Género:</strong> {{ emprendedor.genero }}</p>
         <p><strong>Pregrado:</strong> {{ emprendedor.pregrado }}</p>
