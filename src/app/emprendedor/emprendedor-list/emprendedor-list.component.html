@@ -4,12 +4,12 @@
 
 <div class="container">
 
-    <div style="display: flex; gap: 15px; overflow-x: auto; margin-top: 15px; padding-bottom: 10px;">
+    <div style="display: flex;overflow-x: auto;">
     
     <div *ngFor="let emprendedor of emprendedores"[routerLink]="['/emprendedores', emprendedor.id]"style="cursor: pointer; text-align: center;">
-      <img [src]="emprendedor.foto_url" alt="{{ emprendedor.nombre }}" style="width: 120px; height: auto; border-radius: 6px;">
+      <img [src]="emprendedor.foto_url" alt="{{ emprendedor.nombre }}" style="width: 120px; height: auto;">
 
-      <h3 style="color: green; font-weight: bold; margin-top: 10px;">{{ emprendedor.nombre }}</h3>
+      <h3 style="color: green; font-weight: bold;">{{ emprendedor.nombre }}</h3>
 
         <p><strong>Género:</strong> {{ emprendedor.genero }}</p>
         <p><strong>Pregrado:</strong> {{ emprendedor.pregrado }}</p>
